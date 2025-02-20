@@ -4,9 +4,9 @@
     // Define the classes based on active state
     $classes =
         $active ?? false
-            ? 'inline-flex items-center px-3 pt-2 pb-1 border-b-2 border-indigo-500 dark:border-indigo-400
+            ? 'inline-flex items-center px-3 pt-2 pb-1 border-b-2 border-sage-500 dark:border-sage-400
     text-sm font-medium leading-5 text-gray-900 dark:text-gray-100
-    focus:outline-none focus:border-indigo-700 dark:focus:border-indigo-300
+    focus:outline-none focus:border-sage-700 dark:focus:border-sage-300
     transition duration-200 ease-in-out'
             : 'inline-flex items-center px-3 pt-2 pb-1 border-b-2 border-transparent
     text-sm font-medium leading-5 text-gray-600 dark:text-gray-400
