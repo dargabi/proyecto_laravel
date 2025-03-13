@@ -16,6 +16,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-enterprise-dark-blue dark:text-enterprise-light-blue hover:text-enterprise-blue dark:hover:text-enterprise-dark-blue">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('alumnos.index')" :active="request()->routeIs('alumnos.*')" class="text-enterprise-dark-blue dark:text-enterprise-light-blue hover:text-enterprise-blue dark:hover:text-enterprise-dark-blue">
+                        {{ __('Alumnos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -72,6 +75,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-enterprise-dark-blue dark:text-enterprise-light-blue hover:text-enterprise-blue dark:hover:text-enterprise-dark-blue">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('alumnos.index')" :active="request()->routeIs('alumnos.*')" class="text-enterprise-dark-blue dark:text-enterprise-light-blue hover:text-enterprise-blue dark:hover:text-enterprise-dark-blue">
+                {{ __('Alumnos') }}
             </x-responsive-nav-link>
         </div>
 

@@ -13,7 +13,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        //
+        $alumnos = Alumno::orderBy('apellidos', 'asc')->paginate(10);
+        return view('alumnos', compact('alumnos'));
     }
 
     /**
@@ -21,7 +22,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumnos.create');
     }
 
     /**
@@ -29,7 +30,8 @@ class AlumnoController extends Controller
      */
     public function store(StoreAlumnoRequest $request)
     {
-        //
+        Alumno::create($request->validated());
+        return redirect()->route('alumnos.index')->with('success', 'Alumno creado correctamente');
     }
 
     /**
@@ -37,7 +39,7 @@ class AlumnoController extends Controller
      */
     public function show(Alumno $alumno)
     {
-        //
+        return view('alumnos.show', compact('alumno'));
     }
 
     /**
@@ -45,7 +47,7 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
-        //
+        return view('alumnos.edit', compact('alumno'));
     }
 
     /**
@@ -53,7 +55,8 @@ class AlumnoController extends Controller
      */
     public function update(UpdateAlumnoRequest $request, Alumno $alumno)
     {
-        //
+        $alumno->update($request->validated());
+        return redirect()->route('alumnos.index')->with('success', 'Alumno actualizado correctamente');
     }
 
     /**
@@ -61,6 +64,7 @@ class AlumnoController extends Controller
      */
     public function destroy(Alumno $alumno)
     {
-        //
+        $alumno->delete();
+        return redirect()->route('alumnos.index')->with('success', 'Alumno eliminado correctamente');
     }
 }

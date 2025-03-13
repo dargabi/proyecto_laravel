@@ -20,7 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // Ruta para alumnos
-Route::get('/alumnos', [AlumnoController::class, 'index'])->name('alumnos');
+Route::middleware('auth')->group(function () {
+    Route::resource('alumnos', AlumnoController::class);
+});
 
 // Ruta para cerrar sesión
 Route::post('/logout', function () {
